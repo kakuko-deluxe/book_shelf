@@ -1,12 +1,11 @@
 ja:
-  activerecord:
-    models:
-      book: 書籍情報
-    attributes:
-      book:
-        title: タイトル
-        price: 価格
-        publish_date: 発売日
-        description: 詳細
-    errors:
-      messages:
+  books:
+    new:
+      title: 書籍登録
+    show:
+      price: 価格
+      price_yen: "¥%{price}"
+      publish_date: 発売日
+      description: 商品の説明
+      edit: 編集
+      return: 戻る
