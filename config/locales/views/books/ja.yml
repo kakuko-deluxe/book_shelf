@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      book: 書籍情報
+    attributes:
+      book:
+        title: タイトル
+        price: 価格
+        publish_date: 発売日
+        description: 詳細
+    errors:
+      messages:
