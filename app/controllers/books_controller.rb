@@ -10,7 +10,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to @book, notice: "書籍を登録したった！"
     else
-      render :new  
+      render :new 
     end
   end
 
