@@ -7,9 +7,17 @@ class BooksController < ApplicationController
   end
   def create
     @book = Book.new(book_params)
-    @book.save
-    redirect_to @book, notice: "書籍を登録したった！"
+    if @book.save
+      redirect_to @book, notice: "書籍を登録したった！"
+    else
+      render :new  
+    end
   end
+
+  def show
+    @book = Book.find(params[:id])
+  end
+  
   private
 
   def book_params
