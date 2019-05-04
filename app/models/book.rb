@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
-  has_one_attached :image
-  attribute :new_image
+  belongs_to :category
+  has_one_attached :image 
+  attribute :new_image #擬似的なカラムを用意(self.imageを受ける)
   validates :title,presence:true,length:{maximum:50}
   validates :price,presence:true,numericality:{
     only_integer:true,
@@ -10,6 +11,6 @@ class Book < ApplicationRecord
   validates :description,presence: true,length:{maximum:1000}
   
   before_save do
-    self.image = new_image if new_image
+    self.image = new_image if new_image #画像データをself.imageに保存する
   end
 end
