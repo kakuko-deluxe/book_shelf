@@ -1,0 +1,8 @@
+# config/locales/views/reviews/ja.yml
+
+ja:
+  reviews:
+    new:
+      title: レビュー登録
+    form:
+      back: 戻る
