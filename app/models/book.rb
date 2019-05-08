@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :category
   has_many :reviews, dependent: :destroy
+  has_many :users,thought: :reviews
   has_one_attached :image 
   attribute :new_image #擬似的なカラムを用意(self.imageを受ける)
   validates :title,presence:true,length:{maximum:50}

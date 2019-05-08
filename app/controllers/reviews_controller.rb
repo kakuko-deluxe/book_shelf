@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-before_action :set_book, only: [:new, :create]
+before_action :set_book, only: [:show, :new, :create]
+before_action :set_review, only: :show
 def new
   @review = Review.new
 end
@@ -15,11 +16,17 @@ def create
     render :new
   end
 end
+
+def show
+end
 private
 def review_params
   params.require(:review).permit(:title, :body, :evaluation)
 end
 def set_book
   @book = Book.find(params[:book_id])
+end
+def set_review
+  @review = Review.find(params[:id])
 end
 end
